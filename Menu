@@ -1,4 +1,42 @@
-class Menu
+import java.io.*;
+import java.util.*;
+
+public class Menu
 {
-    
+    public static void main(String[] args)
+    {
+        int cmd; 
+        String FileName;          
+        FileReader rf = new FileReader();
+        Scanner sc = new Scanner(System.in);
+
+		System.out.println("Welcome to the Windsor Open Data Source Center");
+        while(true)
+		{		
+            System.out.println("\nHow would you like to search?");
+            System.out.println("1. Search Bar");
+            System.out.println("2. Category Search");
+            System.out.println("0. Exit");
+            System.out.print(">> ");
+            cmd = sc.nextInt();
+        
+            switch(cmd)
+            {
+                case 1: System.out.println("\nWhat file would you like to view?");
+                        System.out.print(">> ");
+                        FileName = sc.next(); 
+                        rf.DisplayFile(FileName);
+                        break; 
+                case 2: System.out.println("\nFeature not implemented yet");
+                        break;
+                case 0: System.out.println("\nThank you for exploring Windsor's Open Data Source Center");
+                        System.exit(0);
+                        break;
+                default: System.out.println("\nInvalid Command");
+                        break;
+            }
+        }	
+        
+     
+    }
 }
