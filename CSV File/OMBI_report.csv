@@ -1,0 +1,48 @@
+The Corporation of the City of Windsor 27/09/2010 ,
+OMBI Report (Bylaws) ,
+09 Report for the 20 2010 Calendar year ,
+Page : 1 of 1 ,
+,
+DATA ,
+WAREHOUSE ,
+REFERENCE DESCRIPTION COUNT ,
+,
+Community Impact : ,
+,
+"BYLW110 Number of Dog Licenses/Registrations Issued During Year (AL, DG, RD) ","7,643"
+BYLW125 2nd # of Numerator -# Yard Maint. Complaints Req'g Follow-Up Enfrcmnt (DY) ,184
+BYLW128 2nd # of Numerator -# Noise Complaints Requiring Follow-Up Enfrcmnt (EM) ,10
+BYLW130 2nd # of Numerator -# Zoning Complaints Requiring Follow-Up Enfrcmnt (BU) ,84
+BYLW135 2nd # of Numerator -# Property Standard Complaints Requiring Follow-Up ,223
+,
+"Enforcement (AB, BC, GW, FE, SM, SN, YC) ",
+BYLW140 Proactive Yard Maintenance Enforcement Occurrences (DY) ,157
+BYLW142 Proactive Noise Enforcement Occurrences (EM) ,24
+BYLW144 Proactive Zoning Enforcement Occurrences (VY) ,25
+BYLW146 Proactive Property Standard Enforcement Occurrences (VY) ,72
+,
+Service Level : ,
+,
+BYLW207 a Numerator -Annual Number of Specified Complaints ,"3,448"
+BYLW207 b Denominator -Annual Total Number of Logged Complaints ,"7,038"
+BYLW210 Number of Yard Maintenance Complaints (DY) ,"1,453"
+BYLW212 Number of Noise Complaints (EM) ,378
+BYLW215 Number of Zoning Complaints (BU) ,339
+"BYLW220 Number of Property Standard Complaints (AB, BC, FE, GW, SM, SN, YC) ","1,278"
+BYLW231 Number of Yard Maintenance Inspections (DY) ,"3,646"
+BYLW232 Number of Noise Inspections (EM) ,536
+,
+BYLW236 #1 Number of Zoning Inspections Per Complaint -(BU) -No Violation ,648
+BYLW236 #2 Number of Zoning Inspections Per Complaint -(VY) -from (BU) Complaint ,300
+BYLW236 #3 Number of Zoning Inspections Per Complaint -(VY) -Field Generated ,135
+,
+BYLW241 #1 ,
+Number of Property Standard Inspections Per Complaint -No Violation ,"2,082"
+"(AB, BC, FE, GW, SM, SN, YC ) ",
+,
+BYLW241 #2 ,
+Number of Property Standard Inspections Per Complaint -Violation (VY) ,"1,011"
+,
+BYLW241 #3 ,
+Number of Property Standard Inspections Per Complaint -(VY) -,407
+Field Generated ,
