@@ -12,7 +12,7 @@ public class Menu
 
 		System.out.println("Welcome to the Windsor Open Data Source Center");
         while(true)
-		{		
+	{		
             System.out.println("\nHow would you like to search?");
             System.out.println("1. Search Bar");
             System.out.println("2. Category Search");
