@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import= "yolo.Servlet1"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,19 +16,19 @@
  resources from maps to applications and more. 
 </p>
 <hr>
-<form action= "dataSetPage.jsp" method= "put">
+<form action= "dataSetPage.jsp" method= "post">
 Search:
 <input type= "text" name= "textfield"> 
 <!--= <output name= "op" for= "textfield"></output>  -->
 <label>Categories: </label>
-<select id="card" name="usercard">
-        <option value="visa">Traffic</option>
-        <option value="mc">Parks & Recreation</option>
-        <option value="amex">Construction</option>
+<select id="category" >
+		<option value=""> </option>
+        <option value="traf">Traffic</option>
+        <option value="pr">Parks & Recreation</option>
+        <option value="con">Construction</option>
       </select>
 
 <input type= "submit" value= "Submit">
 </form>
-
 </body>
 </html>
