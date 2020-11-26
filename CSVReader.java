@@ -1,8 +1,19 @@
+import java.util.Scanner;
+import java.io.File;  
+import java.io.FileNotFoundException;     
+
 class CSVReader extends FileReader
 {
+    //Calls FileReaders Constructor
     public CSVReader()
     {
         super();
+    }
+
+    //Calls FileReaders Overloaded Constructor
+    public CSVReader(String FileName)
+    {
+        super(FileName);
     }
 
     //Displays contents of a given file
@@ -18,6 +29,8 @@ class CSVReader extends FileReader
             while (Reader.hasNextLine()) 
             {
                 String line = Reader.nextLine();    //Reads line in file
+                line = line.replace(","," | ");
+                line = line.replace("\"","");
                 FileContent.append(line + "\n");    //Stores multiple lines
             }
             Reader.close();
