@@ -6,16 +6,32 @@ public class Menu
     public static void main(String[] args)
     {
         int cmd; 
-        String FileName;          
-        FileReader rf = new FileReader();
+        int currentIndex = 0;
+        final int SIZE = 10;
+        String FileName;
+        String DataDirectory = "/home/falkn111/Java/OOAD";          
+        FileReader rf[] = new CSVReader[SIZE];
         Scanner sc = new Scanner(System.in);
+       
+        //Loading Files into Array
+        File dir = new File(DataDirectory);
+        for (File f : dir.listFiles())
+        {
+            if(f.getName().contains(".csv"))
+            {
+                rf[currentIndex] = new CSVReader();
+                rf[currentIndex].LoadFile(f.getName());
+                currentIndex++;
+            }
+        }
 
+        //Menu that user sees
 		System.out.println("Welcome to the Windsor Open Data Source Center");
         while(true)
-	{		
+		{		
             System.out.println("\nHow would you like to search?");
             System.out.println("1. Search Bar");
-            System.out.println("2. Category Search");
+            System.out.println("2. View Files");
             System.out.println("0. Exit");
             System.out.print(">> ");
             cmd = sc.nextInt();
@@ -24,15 +40,29 @@ public class Menu
             {
                 case 1: System.out.println("\nWhat file would you like to view?");
                         System.out.print(">> ");
-                        FileName = sc.next(); 
-                        rf.DisplayFile(FileName);
+                        FileName = sc.next();
                         break; 
-                case 2: System.out.println("\nFeature not implemented yet");
+                case 2: System.out.println("\nList of Files to Choose From");
+                        for(int i = 0; i < currentIndex; i++)
+                        {
+                            System.out.println(i + ": " + rf[i].getFileName());
+                        }
+                        System.out.println("\nWhich one would you like to view?");
+                        System.out.print(">> ");
+                        cmd = sc.nextInt();
+                        if((cmd <= currentIndex-1) && (cmd >= 0))
+                        {
+                            System.out.println(rf[cmd].getFileContent());
+                        }
+                        else
+                        {
+                            System.out.println("Invalid Entry");
+                        }
                         break;
                 case 0: System.out.println("\nThank you for exploring Windsor's Open Data Source Center");
                         System.exit(0);
                         break;
-                default: System.out.println("\nInvalid Command");
+                default:System.out.println("\nInvalid Command");
                         break;
             }
         }	
