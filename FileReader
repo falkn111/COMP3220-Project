@@ -13,6 +13,12 @@ abstract class FileReader
         Name = "Empty";
         FileContent = new StringBuilder("");
     }
+    
+    public FileReader(String FileName)
+    {
+        Name = FileName; 
+        FileContent = new StringBuilder("");
+    }
 
     abstract void LoadFile(String FileName);
  
@@ -20,6 +26,11 @@ abstract class FileReader
     public String getFileName()
     {
         return Name;
+    }
+
+    public StringBuilder getRawFileContent()
+    {
+        return FileContent;
     }
 
     public String getFileContent()
