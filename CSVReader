@@ -1,0 +1,32 @@
+class CSVReader extends FileReader
+{
+    public CSVReader()
+    {
+        super();
+    }
+
+    //Displays contents of a given file
+    public void LoadFile(String FileName) 
+    {
+        Name = FileName; 
+        StringBuilder str = new StringBuilder();        
+        try
+        {
+            File FileType = new File(FileName);     //Creates file attribute
+            Scanner Reader = new Scanner(FileType); //Creates Scanner to read file
+
+            while (Reader.hasNextLine()) 
+            {
+                String line = Reader.nextLine();    //Reads line in file
+                FileContent.append(line + "\n");    //Stores multiple lines
+            }
+            Reader.close();
+        }
+
+        //If file cannot be found, display error message
+        catch (FileNotFoundException e) 
+        {
+            System.out.println("\nFile Not Found");
+        }
+    }     
+}
