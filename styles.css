@@ -1,3 +1,57 @@
 h2 {
-	font-size: 40px;
+	font-size: 30px;
+	color: white;
+	text-align: center;
+}
+
+html{
+	height: 200%;
+}
+
+body {
+	background-image: linear-gradient(navy, white);	
+}
+
+#intro {
+	text-align: center;
+	color: white;
+}
+
+img {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+form {
+	text-align: center;
+}
+	
+div {
+	background-image: url('wlogo1.jpg');
+}
+
+label {
+	color: white;
+}
+
+form {
+	color: white;
+}
+
+a {
+	color: navy;
+	text-align: center;
+}
+#servlet {
+	background-image: linear-gradient(#4863A0, #98AFC7);
+}
+
+p { 
+	color: white;
+}
+
+h3 {
+	color: navy;
+	text-align: center;
 }
