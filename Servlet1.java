@@ -68,9 +68,56 @@ public class Servlet1 extends HttpServlet implements Info{
         
         System.out.println("Files loaded");
 		
+		
 		}
-	     
 	    
+		protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
+		{
+			String s = request.getParameter("selection");
+			
+			
+			if(s.isEmpty())
+			{
+				
+				RequestDispatcher r = request.getRequestDispatcher("servlet");
+				r.forward(request, response);
+			}
+			
+			else if (s == "0" || s == "1" ||s == "2")
+			{
+				response.setContentType("text/html");
+				PrintWriter pw = response.getWriter();
+				
+				pw.println("<!DOCTYPE html><html>\n" + "<head>\n" + "<meta charset=\"UTF-8\">\n" + "<link rel =\"stylesheet\" href= \"styles.css\">\n" + 
+                		"<title>Windsor's Open Data Portal</title>" + "</head>\n" + "<body id= 'servlet'>\n" + 
+                		"<h2>The City of Windsor's Open Data Portal</h2>\n" + "<hr>");
+                
+                pw.println("<h3> You selected: " + s + "</h3>");
+				
+                
+                pw.println("<h3>" + infoContent1 + "<h3>");
+                pw.println("<p>" + infoContent2 + "<p>");
+                pw.println("<p>" + infoContent3 + "<p>");
+                pw.println("<p>" + infoContent4 + "<p>");
+                pw.println("<p>" + infoContent5 + "<p>");
+                
+                pw.println("<img src=\"skyline.jpg\" alt=\"skyline\"> <a href = \"MainPage.jsp\"> Return to main page </a>" + "</body>\n" + "</html>");
+				System.out.println("in service");
+				clearInfoContent();
+			}
+			
+			else {
+				
+				RequestDispatcher r = request.getRequestDispatcher("/servlet");
+				r.forward(request, response);
+				
+			}
+			
+		}
+		
+		
+		
+		
 	     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 			// TODO Auto-generated method stub
 	    	 String s = request.getParameter("textfield");
@@ -91,6 +138,8 @@ public class Servlet1 extends HttpServlet implements Info{
 				
 				RequestDispatcher r = request.getRequestDispatcher("MainPage.jsp");
 				r.forward(request, response);
+				
+		
 			}
 			else
 			{
@@ -114,7 +163,16 @@ public class Servlet1 extends HttpServlet implements Info{
                         infoContent5 = infoContent5 + "<br>" + string;
                         holder++;
                     }
+                    
                 }
+                infoContent5 = infoContent5 + "<form action= \"servlet\" method= \"get\">\n" + 
+                		"                Select:\n" + 
+                		"                <input type= \"text\" name= \"selection\">\n" + 
+                		"                <input type= \"submit\" value= \"Submit\"><br><br><br><br><br><br><br>";
+                
+                
+            
+                
                 if(holder == 0)
                 {
                     System.out.println("No Files Found");
@@ -122,6 +180,8 @@ public class Servlet1 extends HttpServlet implements Info{
                     infoContent1 = "No Files Found"; 
                     
                     infoContent4 = "<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><hr>";
+                    
+                    infoContent5 = " ";
                     
                     
                 }
@@ -137,6 +197,8 @@ public class Servlet1 extends HttpServlet implements Info{
                     infoContent3 = Temp[0].getFileContent();
                     
                     infoContent4 = " ";
+                    
+                    infoContent5 = " ";
                     
                 }
                 pw.println("<!DOCTYPE html><html>\n" + "<head>\n" + "<meta charset=\"UTF-8\">\n" + "<link rel =\"stylesheet\" href= \"styles.css\">\n" + 
@@ -165,3 +227,4 @@ public class Servlet1 extends HttpServlet implements Info{
 		   infoContent1 = " ";infoContent2 = " ";infoContent3 = " ";infoContent4 = " "; infoContent5 = " ";
 	   }
 	}
+
