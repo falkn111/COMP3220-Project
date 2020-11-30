@@ -10,8 +10,9 @@ public String Data_Des;  //Dataset Description
 public String Data_Acc;	 //Data Accuracy Comments
 public String Data_Att;  //Attributes
 
-public DataSetInfo (String a, String b, String c, String d,String e)
+public DataSetInfo (String z,String a, String b, String c, String d,String e)
 {
+	Data_Name = z;
 	Data_Cust = a;
 	Data_Cur = b;
 	Data_Des = c;
