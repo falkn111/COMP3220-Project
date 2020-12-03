@@ -54,6 +54,7 @@ public class Servlet1 extends HttpServlet implements Info{
                 currentIndex++;
             }
         }
+	//have to access files locally since sql database hasn't been implemented yet
         CSVReader fi = new CSVReader("/Users/Jarvis/Desktop/op_files/Arenas.csv");
         Files[0] = fi;
         CSVReader fa = new CSVReader("/Users/Jarvis/Desktop/op_files/AlleyMaintenance_YTD.csv");
@@ -70,7 +71,9 @@ public class Servlet1 extends HttpServlet implements Info{
 		
 		
 		}
-	    
+	    	/* This has to be worked on more in future iterations to work properly
+		This function is supposed to let the user select which data set to view if there are multiple options after search
+		*/
 		protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
 		{
 			String s = request.getParameter("selection");
@@ -117,7 +120,7 @@ public class Servlet1 extends HttpServlet implements Info{
 		
 		
 		
-		
+	`	// This function creates the dynamic web page from the html form from Mainpage.jsp
 	     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 			// TODO Auto-generated method stub
 	    	 String s = request.getParameter("textfield");
